@@ -1,7 +1,10 @@
+import './assets/style.scss';
+import Map from './components/Map';
+
 const App = () => {
   return (
     <div>
-      <h1>Hello World</h1>
+      <Map />
     </div>
   );
 };
