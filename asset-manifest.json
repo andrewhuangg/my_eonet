@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/my_eonet/static/css/main.aca52678.chunk.css",
+    "main.js": "/my_eonet/static/js/main.b3555f87.chunk.js",
+    "main.js.map": "/my_eonet/static/js/main.b3555f87.chunk.js.map",
+    "runtime-main.js": "/my_eonet/static/js/runtime-main.ecc3550c.js",
+    "runtime-main.js.map": "/my_eonet/static/js/runtime-main.ecc3550c.js.map",
+    "static/js/2.ff8fb946.chunk.js": "/my_eonet/static/js/2.ff8fb946.chunk.js",
+    "static/js/2.ff8fb946.chunk.js.map": "/my_eonet/static/js/2.ff8fb946.chunk.js.map",
+    "static/js/3.e551e50f.chunk.js": "/my_eonet/static/js/3.e551e50f.chunk.js",
+    "static/js/3.e551e50f.chunk.js.map": "/my_eonet/static/js/3.e551e50f.chunk.js.map",
+    "index.html": "/my_eonet/index.html",
+    "static/css/main.aca52678.chunk.css.map": "/my_eonet/static/css/main.aca52678.chunk.css.map",
+    "static/js/2.ff8fb946.chunk.js.LICENSE.txt": "/my_eonet/static/js/2.ff8fb946.chunk.js.LICENSE.txt",
+    "static/media/spinner.d8baec16.gif": "/my_eonet/static/media/spinner.d8baec16.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ecc3550c.js",
+    "static/js/2.ff8fb946.chunk.js",
+    "static/css/main.aca52678.chunk.css",
+    "static/js/main.b3555f87.chunk.js"
+  ]
+}
