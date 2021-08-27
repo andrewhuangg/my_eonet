@@ -16,7 +16,7 @@ const Map = ({ eventData, center, zoom }) => {
     if (geoSize > 1) {
       const geoArray = event.geometries;
       return geoArray.map((geoLoc) => {
-        if (Array.isArray(geoLoc.coordinates[0])) {
+        if (geoLoc.type === 'Polygon') {
           const coordArray = geoLoc.coordinates;
           const flatPolygon = coordArray.flat(1);
           return flatPolygon.map((poly) => {
@@ -54,7 +54,7 @@ const Map = ({ eventData, center, zoom }) => {
         </>;
       });
     } else {
-      if (Array.isArray(event.geometries[0].coordinates[0])) {
+      if (event.geometries[0].type === 'Polygon') {
         const coordArray = event.geometries[0].coordinates;
         const flatPolygon = coordArray.flat(1);
         return flatPolygon.map((innerPolyArr) => {
