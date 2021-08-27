@@ -2,26 +2,32 @@
   "name": "my_eonet",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://andrewhuangg.github.io/my_eonet",
   "dependencies": {
+    "-": "0.0.1",
     "@iconify/icons-mdi": "^1.1.21",
     "@iconify/react": "^3.0.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
+    "gh-pages": "^3.2.3",
     "google-map-react": "^2.1.10",
     "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "sass-loader": "^12.1.0",
+    "save-dev": "0.0.1-security",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
