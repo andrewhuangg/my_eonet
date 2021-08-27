@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import GoogleMapReact from 'google-map-react';
 import LocationMarker from './LocationMarker';
+import EventInfoBox from './EventInfoBox';
 
 const Map = ({ eventData, center, zoom }) => {
   const googleapi = process.env.REACT_APP_GOOGLE_MAP_API_KEY;
+
+  const [locationEventInfo, setLocationEventInfo] = useState(null);
 
   const markers = eventData.map((event) => {
     const geoSize = event.geometries.length;
@@ -18,12 +21,36 @@ const Map = ({ eventData, center, zoom }) => {
           const flatPolygon = coordArray.flat(1);
           return flatPolygon.map((poly) => {
             <>
-              <LocationMarker id={categoryId} lat={poly[1]} lng={poly[0]} />
+              <LocationMarker
+                id={categoryId}
+                lat={poly[1]}
+                lng={poly[0]}
+                onClick={() =>
+                  setLocationEventInfo({
+                    id: event.id,
+                    title: event.title,
+                    description: event.description,
+                    link: event.link,
+                  })
+                }
+              />
             </>;
           });
         }
         <>
-          <LocationMarker id={categoryId} lat={geoLoc.coordinates[1]} lng={geoLoc.coordinates[0]} />
+          <LocationMarker
+            id={categoryId}
+            lat={geoLoc.coordinates[1]}
+            lng={geoLoc.coordinates[0]}
+            onClick={() =>
+              setLocationEventInfo({
+                id: event.id,
+                title: event.title,
+                description: event.description,
+                link: event.link,
+              })
+            }
+          />
         </>;
       });
     } else {
@@ -33,7 +60,19 @@ const Map = ({ eventData, center, zoom }) => {
         return flatPolygon.map((innerPolyArr) => {
           return innerPolyArr.map((coords) => {
             <>
-              <LocationMarker id={categoryId} lat={coords[1]} lng={coords[0]} />
+              <LocationMarker
+                id={categoryId}
+                lat={coords[1]}
+                lng={coords[0]}
+                onClick={() =>
+                  setLocationEventInfo({
+                    id: event.id,
+                    title: event.title,
+                    description: event.description,
+                    link: event.link,
+                  })
+                }
+              />
             </>;
           });
         });
@@ -43,6 +82,14 @@ const Map = ({ eventData, center, zoom }) => {
             id={categoryId}
             lat={event.geometries[0].coordinates[1]}
             lng={event.geometries[0].coordinates[0]}
+            onClick={() =>
+              setLocationEventInfo({
+                id: event.id,
+                title: event.title,
+                description: event.description,
+                link: event.link,
+              })
+            }
           />
         );
       }
@@ -58,6 +105,7 @@ const Map = ({ eventData, center, zoom }) => {
       >
         {markers}
       </GoogleMapReact>
+      {locationEventInfo && <EventInfoBox info={locationEventInfo} />}
     </div>
   );
 };

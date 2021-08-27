@@ -15,7 +15,7 @@ import extremeTemperature from '@iconify/icons-mdi/thermometer-high';
 import volcano from '@iconify/icons-mdi/image-filter-hdr';
 import waterColor from '@iconify/icons-mdi/format-color-fill';
 
-const LocationMarker = ({ lat, lng, onClick, id, key }) => {
+const LocationMarker = ({ lat, lng, onClick, id }) => {
   let icon;
   switch (id) {
     case 6:
@@ -64,7 +64,7 @@ const LocationMarker = ({ lat, lng, onClick, id, key }) => {
 
   return (
     <>
-      <div className='locationMarker' onClick={onClick} key={key}>
+      <div className='locationMarker' onClick={onClick}>
         <Icon icon={icon} className={`locationMarker__icon locationMarker__icon-${id}`} />
       </div>
     </>
